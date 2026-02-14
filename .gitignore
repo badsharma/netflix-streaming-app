@@ -1,0 +1,54 @@
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+/netflix-frontend/build/
+/netflix-backend/target/
+*.class
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+logs/
+hs_err_pid*.log
+replay_pid*.log
+
+# Java
+*.jar
+*.war
+*.ear
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+dependency-reduced-pom.xml
+
+# React
+.eslintcache
+
+# Testing
+coverage/
+
+# Misc
+.cache/
+temp/
+tmp/

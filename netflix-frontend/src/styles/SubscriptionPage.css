@@ -1,0 +1,71 @@
+.subscription-page {
+  min-height: 100vh;
+  padding: 40px 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.current-subscription-info {
+  background-color: #1a1a1a;
+  border: 2px solid #46d369;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 50px;
+}
+
+.current-subscription-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #46d369;
+}
+
+.current-plan-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.plan-tier {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.tier-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e50914;
+}
+
+.tier-status {
+  background-color: #46d369;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.plan-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #e5e5e5;
+}
+
+.plan-benefits p {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .subscription-page {
+    padding: 30px 20px;
+  }
+
+  .current-plan-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

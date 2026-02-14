@@ -1,0 +1,129 @@
+.video-player {
+  position: relative;
+  width: 100%;
+  background-color: #000;
+}
+
+.video-element {
+  width: 100%;
+  display: block;
+}
+
+.video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-player:hover .video-controls {
+  opacity: 1;
+}
+
+.control-button {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: transform 0.2s ease;
+}
+
+.control-button:hover {
+  transform: scale(1.2);
+}
+
+.seek-bar {
+  flex: 1;
+  height: 6px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.seek-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #e50914;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.seek-bar::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: #e50914;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.time-display {
+  color: white;
+  font-size: 0.9rem;
+  min-width: 120px;
+}
+
+.volume-slider {
+  width: 100px;
+  height: 6px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.quality-badge {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #e50914;
+}
+
+@media (max-width: 768px) {
+  .video-controls {
+    padding: 15px 10px;
+    gap: 10px;
+  }
+
+  .volume-slider {
+    display: none;
+  }
+
+  .time-display {
+    font-size: 0.8rem;
+    min-width: 100px;
+  }
+}
