@@ -8,6 +8,7 @@ import com.netflix.streaming.model.enums.SubscriptionTier;
 import com.netflix.streaming.repository.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -101,12 +102,11 @@ public class MovieService {
 
         if (userTier != null) {
             List<SubscriptionTier> allowedTiers = getAllowedTiers(userTier);
-            movies = movies.map(movie -> {
-                if (allowedTiers.contains(movie.getMinimumTier())) {
-                    return movie;
-                }
-                return null;
-            });
+            List<MovieResponse> filteredContent = movies.getContent().stream()
+                    .filter(movie -> allowedTiers.contains(movie.getMinimumTier()))
+                    .map(this::convertToResponse)
+                    .collect(Collectors.toList());
+            return new PageImpl<>(filteredContent, pageable, filteredContent.size());
         }
 
         return movies.map(this::convertToResponse);

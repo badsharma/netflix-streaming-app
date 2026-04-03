@@ -37,7 +37,9 @@ public class WatchHistoryService {
         history.setWatchedQuality(request.getQuality());
         history.setLastWatchedAt(LocalDateTime.now());
 
-        double watchPercentage = (double) request.getProgressSeconds() / request.getTotalDurationSeconds() * 100;
+        double watchPercentage = request.getTotalDurationSeconds() > 0
+                ? (double) request.getProgressSeconds() / request.getTotalDurationSeconds() * 100
+                : 0;
         history.setCompleted(watchPercentage >= 90);
 
         return watchHistoryRepository.save(history);
